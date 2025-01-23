@@ -1,0 +1,72 @@
+[
+    {
+        "PlayerName": "Jasper",
+        "TeamName": "Green Aligators",
+        "GameDate": "2024-04-01",
+        "AtBats": 4,
+        "Hits": 2,
+        "HomeRuns": 1,
+        "Runs": 2,
+        "Wins": 0,
+        "Losses": 0,
+        "StrikeOuts": 0,
+        "InningsPitched": 0.0,
+        "GamesPlayed": 1
+    },
+    {
+        "PlayerName": "Jasper",
+        "TeamName": "Green Aligators",
+        "GameDate": "2024-04-03",
+        "AtBats": 5,
+        "Hits": 3,
+        "HomeRuns": 0,
+        "Runs": 1,
+        "Wins": 0,
+        "Losses": 0,
+        "StrikeOuts": 0,
+        "InningsPitched": 0.0,
+        "GamesPlayed": 1
+    },
+    {
+        "PlayerName": "Jasper",
+        "TeamName": "Green Aligators",
+        "GameDate": "2024-04-05",
+        "AtBats": 3,
+        "Hits": 1,
+        "HomeRuns": 0,
+        "Runs": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "StrikeOuts": 0,
+        "InningsPitched": 0.0,
+        "GamesPlayed": 1
+    },
+    {
+        "PlayerName": "Jasper",
+        "TeamName": "Green Aligators",
+        "GameDate": "2024-04-07",
+        "AtBats": 4,
+        "Hits": 4,
+        "HomeRuns": 2,
+        "Runs": 3,
+        "Wins": 0,
+        "Losses": 0,
+        "StrikeOuts": 0,
+        "InningsPitched": 0.0,
+        "GamesPlayed": 1
+    },
+    {
+        "PlayerName": "Jasper",
+        "TeamName": "Green Aligators",
+        "GameDate": "2024-04-09",
+        "AtBats": 4,
+        "Hits": 2,
+        "HomeRuns": 0,
+        "Runs": 1,
+        "Wins": 0,
+        "Losses": 0,
+        "StrikeOuts": 0,
+        "InningsPitched": 0.0,
+        "GamesPlayed": 1
+    }
+]
