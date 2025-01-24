@@ -1,14 +1,24 @@
 [
   {
     "PlayerName": "Jasper",
+    "TeamName": null,
     "GameDate": "2023-09-21",
-    "AtBats": 0,
-    "Hits": 0,
-    "HomeRuns": 0,
-    "Runs": 0,
-    "Wins": 0,
-    "Losses": 0,
-    "StrikeOuts": 0,
-    "InningsPitched": 0
+    "AB": 0,
+    "H": 0,
+    "Doubles": 0,
+    "Triples": 0,
+    "HR": 0,
+    "R": 0
+  },
+  {
+    "PlayerName": "Jasper",
+    "TeamName": "Golden Knights",
+    "GameDate": "2025-01-09",
+    "AB": 2,
+    "H": 1,
+    "Doubles": 0,
+    "Triples": 0,
+    "HR": 0,
+    "R": 0
   }
 ]

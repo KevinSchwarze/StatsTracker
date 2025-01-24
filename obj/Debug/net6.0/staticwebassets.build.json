@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HrTJAxXJt/5z11EXrC/Li778uNNqaMtA/9Z/inI0XtY=",
+  "Hash": "DWedRI8IZVYq27ivAj0rne63FZb3Gxs3Ty6Bjn2b8bU=",
   "Source": "StatsTracker",
   "BasePath": "_content/StatsTracker",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\js\\scripts.js",
+      "SourceId": "StatsTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\",
+      "BasePath": "_content/StatsTracker",
+      "RelativePath": "js/scripts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\scripts.js"
     },
     {
       "Identity": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\js\\site.js",
