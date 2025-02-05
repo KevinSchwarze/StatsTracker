@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "LxP3ny3Hdy/YLr2Zr3Qev8OPaPTWqcRYWk7I0Vj5nzFRKHxsl/+Oi+BJZrRGbGioGgABYoqJi2Zul2LZXrhekA==",
+  "dgSpecHash": "AlG9FlodQfkd09NbfsoG5tFwMq9G6mcbtIBQ+jG0BZyVkNHhy78VjkY3uqQAGZnZ//4M7if1reWob4R4ciNeiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\StatsTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kevin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://build.chi.verascape.com:8111/httpAuth/app/nuget/v1/FeedService.svc'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

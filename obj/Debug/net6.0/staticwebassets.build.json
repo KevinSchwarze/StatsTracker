@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DWedRI8IZVYq27ivAj0rne63FZb3Gxs3Ty6Bjn2b8bU=",
+  "Hash": "ByzlB/TXEhMIV5Iq4bA83L3Ci2CsTEgJ6bSWkohaPjY=",
   "Source": "StatsTracker",
   "BasePath": "_content/StatsTracker",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\js\\scripts.js",
+      "Identity": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\img\\baseballfield.png",
       "SourceId": "StatsTracker",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\",
       "BasePath": "_content/StatsTracker",
-      "RelativePath": "js/scripts.js",
+      "RelativePath": "img/baseballfield.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +65,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\scripts.js"
+      "OriginalItemSpec": "wwwroot\\img\\baseballfield.png"
     },
     {
       "Identity": "C:\\Users\\Kevin\\Desktop\\StatsTracker\\wwwroot\\js\\site.js",

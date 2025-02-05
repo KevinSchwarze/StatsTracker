@@ -7,20 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\Main.cshtml" />
+    <Content Remove="Data\PitcherData.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\Main.cshtml" />
-    <None Include="wwwroot\js\scripts.js" />
+    <Compile Include="Data\PitcherData.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

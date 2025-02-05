@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = "Baseball Stats Application";
+    var selectedTab = Context.Request.Query["tab"];
+    bool showBatter = string.IsNullOrEmpty(selectedTab) || selectedTab == "batter";
+    bool showPitcher = selectedTab == "pitcher";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link @(showBatter ? "active" : "")" href="?tab=batter">Batter Stats</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(showPitcher ? "active" : "")" href="?tab=pitcher">Pitcher Stats</a>
+            </li>
+        </ul>
+
+        <!-- Batter Stats Section -->
+        @if (showBatter)
+        {
+            <form id="addBatterGameForm" method="post" action="/Add/AddGame">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="batterTeamName" class="form-label">Team Name</label>
+                        <input type="text" class="form-control" id="batterTeamName" name="TeamName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="batterPlayerName" class="form-label">Player Name</label>
+                        <input type="text" class="form-control" id="batterPlayerName" name="PlayerName" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="batterGameDate" class="form-label">Game Date</label>
+                        <input type="date" class="form-control" id="batterGameDate" name="GameDate" required>
+                    </div>
+                </div>
+                <h5>Batting Stats</h5>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="batterAB" class="form-label">AB</label>
+                        <input type="number" class="form-control" id="batterAB" name="AB" value="0" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterH" class="form-label">H</label>
+                        <input type="number" class="form-control" id="batterH" name="H" value="0" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterDoubles" class="form-label">Doubles</label>
+                        <input type="number" class="form-control" id="batterDoubles" name="Doubles" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterTriples" class="form-label">Triples</label>
+                        <input type="number" class="form-control" id="batterTriples" name="Triples" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterHR" class="form-label">HR</label>
+                        <input type="number" class="form-control" id="batterHR" name="HR" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterR" class="form-label">R</label>
+                        <input type="number" class="form-control" id="batterR" name="R" value="0">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Batter Game</button>
+            </form>
+
+        }
+
+        <!-- Pitcher Stats Section -->
+        @if (showPitcher)
+        {
+            <div id="pitcherStatsSection" class="mt-3">
+                <div class="card mb-4">
+                    <div class="card-header">Add New Pitcher Game</div>
+                    <div class="card-body">
+                        <form id="addPitcherGameForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="pitcherTeamName" class="form-label">Team Name</label>
+                                    <input type="text" class="form-control" id="pitcherTeamName" placeholder="Enter team name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="pitcherPlayerName" class="form-label">Player Name</label>
+                                    <input type="text" class="form-control" id="pitcherPlayerName" placeholder="Enter player name" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="pitcherGameDate" class="form-label">Game Date</label>
+                                    <input type="date" class="form-control" id="pitcherGameDate" required>
+                                </div>
+                            </div>
+                            <h5>Pitching Stats</h5>
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <label for="pitcherW" class="form-label">W</label>
+                                    <input type="number" class="form-control" id="pitcherW" value="0">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pitcherL" class="form-label">L</label>
+                                    <input type="number" class="form-control" id="pitcherL" value="0">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pitcherSO" class="form-label">SO</label>
+                                    <input type="number" class="form-control" id="pitcherSO" value="0">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pitcherIP" class="form-label">IP</label>
+                                    <input type="number" step="0.1" class="form-control" id="pitcherIP" value="0">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Pitcher Game</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

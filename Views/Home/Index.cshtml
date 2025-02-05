@@ -1,188 +1,133 @@
 ﻿@{
-    ViewData["Title"] = "Baseball Stats Application";
+    Layout = null; // Standalone page without a shared layout
+}
+
+<!DOCTYPE html>
+@{
+    Layout = null; // Standalone page without a shared layout
 }
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"]</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- DataTables CSS -->
-    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Stats Tracker</title>
+    <style>
+      body {
+    background: url('/img/baseballfield.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+        .nav-bar {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+            .nav-bar a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 10px 20px;
+                transition: background 0.3s;
+            }
+
+                .nav-bar a:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 5px;
+                }
+
+        .title {
+            text-align: center;
+            margin: 0;
+            font-size: 185px;
+            color: #355e3b; 
+            text-shadow: 2px 2px 5px silver;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+            .title span {
+                display: inline-block;
+                animation: wave 1.5s ease-in-out forwards;
+                animation-delay: calc(var(--i) * 0.1s);
+                text-align: center;
+                font-weight: bold;
+                color: #013220;
+                text-shadow: 2px 2px 5px silver; /* Text shadow for the outline effect */
+                margin: 0 2px; /* Space between the letters */
+            }
+
+        @@keyframes wave {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+
+            .footer img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-top: 10px;
+            }
+    </style>
 </head>
-
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" id="batterTab" href="#">Batter Stats</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pitcherTab" href="#">Pitcher Stats</a>
-            </li>
-        </ul>
-
-        <!-- Batter Stats Section -->
-        <div id="batterStatsSection">
-            <div class="card mb-4">
-                <div class="card-header">Add New Batter Game</div>
-                <div class="card-body">
-                    <form id="addBatterGameForm">
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="batterTeamName" class="form-label">Team Name</label>
-                                <input type="text" class="form-control" id="batterTeamName" placeholder="Enter team name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="batterPlayerName" class="form-label">Player Name</label>
-                                <input type="text" class="form-control" id="batterPlayerName" placeholder="Enter player name" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="batterGameDate" class="form-label">Game Date</label>
-                                <input type="date" class="form-control" id="batterGameDate" required>
-                            </div>
-                        </div>
-
-                        <h5>Batting Stats</h5>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
-                                <label for="batterAB" class="form-label">AB</label>
-                                <input type="number" class="form-control" id="batterAB" value="0" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="batterH" class="form-label">H</label>
-                                <input type="number" class="form-control" id="batterH" value="0" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="batterDoubles" class="form-label">Doubles</label>
-                                <input type="number" class="form-control" id="batterDoubles" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="batterTriples" class="form-label">Triples</label>
-                                <input type="number" class="form-control" id="batterTriples" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="batterHR" class="form-label">HR</label>
-                                <input type="number" class="form-control" id="batterHR" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="batterR" class="form-label">R</label>
-                                <input type="number" class="form-control" id="batterR" value="0">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Add Batter Game</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Batter Player Stats</div>
-            @*    Have a drop down menu to choose player name*@
-                <div class="card-body">
-                    <table id="batterStatsTable" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                             @* Dynamically create rows from object*@
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                 @*   Load Button calls a Load Batter function on the home controller*@
-                    <button id="loadButton" class="btn btn-secondary mt-3">Load</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pitcher Stats Section -->
-        <div id="pitcherStatsSection" style="display:none;">
-            <div class="card mb-4">
-                <div class="card-header">Add New Pitcher Game</div>
-                <div class="card-body">
-                    <form id="addPitcherGameForm">
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="pitcherTeamName" class="form-label">Team Name</label>
-                                <input type="text" class="form-control" id="pitcherTeamName" placeholder="Enter team name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="pitcherPlayerName" class="form-label">Player Name</label>
-                                <input type="text" class="form-control" id="pitcherPlayerName" placeholder="Enter player name" required>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="pitcherGameDate" class="form-label">Game Date</label>
-                                <input type="date" class="form-control" id="pitcherGameDate" required>
-                            </div>
-                        </div>
-
-                        <h5>Pitching Stats</h5>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
-                                <label for="pitcherW" class="form-label">W</label>
-                                <input type="number" class="form-control" id="pitcherW" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="pitcherL" class="form-label">L</label>
-                                <input type="number" class="form-control" id="pitcherL" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="pitcherSO" class="form-label">SO</label>
-                                <input type="number" class="form-control" id="pitcherSO" value="0">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="pitcherIP" class="form-label">IP</label>
-                                <input type="number" step="0.1" class="form-control" id="pitcherIP" value="0">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Add Pitcher Game</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Pitcher Player Stats</div>
-                <div class="card-body">
-                    <table id="pitcherStatsTable" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Year</th>
-                                <th>Player Name</th>
-                                <th>Team Name</th>
-                                <th>W</th>
-                                <th>L</th>
-                                <th>SO</th>
-                                <th>IP</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+    <div class="nav-bar">
+        <a href="/views/home/main.cshtml">Home</a>
+        @Html.ActionLink("Add Games", "Index", "Add", null, new { @class = "nav-link" })
+        <a href="/review-stats">Review Stats</a>
+        <a href="/add-player">Add Player</a>
     </div>
 
-    <!-- External Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="/js/scripts.js"></script>
+    <h1 class="title" id="animatedTitle"></h1>
+
+    <div class="footer">
+        <p>&copy; 2025 Stats Tracker. All rights reserved.</p>
+        <img src="https://example.com/footer-image.jpg" alt="Footer Image">
+    </div>
+
+    <script>
+        const titleElement = document.getElementById('animatedTitle');
+        const titleText = "Stats Tracker";
+
+        // Wrap each letter in a <span> with a custom delay for the wave animation
+        titleElement.innerHTML = [...titleText].map((char, i) =>
+            `<span style="--i:${i}">${char}</span>`
+        ).join('');
+    </script>
 </body>
-
 </html>
-
 
