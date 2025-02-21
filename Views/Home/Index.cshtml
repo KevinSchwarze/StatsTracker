@@ -106,10 +106,10 @@
 </head>
 <body>
     <div class="nav-bar">
-        <a href="/views/home/main.cshtml">Home</a>
+
         @Html.ActionLink("Add Games", "Index", "Add", null, new { @class = "nav-link" })
-        <a href="/review-stats">Review Stats</a>
-        <a href="/add-player">Add Player</a>
+        @Html.ActionLink("Review Stats", "Index", "Review", null, new { @class = "nav-link" })
+      @*  <a href="/add-player">Add Player</a>*@
     </div>
 
     <h1 class="title" id="animatedTitle"></h1>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PlayerStats>  
+
+<h2>Pitching Stats</h2>
+
+<table id="pitchingTable" class="display">
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Player Name</th>
+            <th>Game Date</th>
+            <th>W</th>
+            <th>L</th>
+            <th>IP</th>
+            <th>HA</th>
+            <th>Runs</th>
+            <th>SO</th>
+            <th>ERA</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TeamName</td>
+                <td>@item.PlayerName</td>
+                <td>@item.GameDate.ToString("yyyy-MM-dd")</td>
+                <td>@item.W</td>
+                <td>@item.L</td>
+                <td>@item.IP</td>
+                <td>@item.HA</td>
+                <td>@item.Runs</td>
+                <td>@item.SO</td>
+                <td>@item.ERA</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#pitchingTable').DataTable();
+        });
+    </script>
+}

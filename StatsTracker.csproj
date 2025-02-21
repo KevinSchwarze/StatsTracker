@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Data\PitcherData.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Data\PitcherData.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

@@ -26,3 +26,4 @@ C:\Users\Kevin\Desktop\StatsTracker\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Kevin\Desktop\StatsTracker\obj\Debug\net6.0\StatsTracker.csproj.CopyComplete
 C:\Users\Kevin\Desktop\StatsTracker\bin\Debug\net6.0\Data\BatterData.json.json
 C:\Users\Kevin\Desktop\StatsTracker\bin\Debug\net6.0\Data\BatterData.json
+C:\Users\Kevin\Desktop\StatsTracker\bin\Debug\net6.0\Data\PitcherData.json

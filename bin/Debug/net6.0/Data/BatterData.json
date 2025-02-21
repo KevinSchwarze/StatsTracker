@@ -1,35 +1,16 @@
-[
-  {
-    "PlayerName": "Jasper",
-    "TeamName": null,
-    "GameDate": "2023-09-21",
-    "AB": 0,
-    "H": 0,
-    "Doubles": 0,
-    "Triples": 0,
-    "HR": 0,
-    "R": 0
-  },
-  {
-    "PlayerName": "Jasper",
-    "TeamName": "Golden Knights",
-    "GameDate": "2025-01-09",
-    "AB": 2,
-    "H": 1,
-    "Doubles": 0,
-    "Triples": 0,
-    "HR": 0,
-    "R": 0
-  },
-  {
-    "PlayerName": "Jasper",
-    "TeamName": "Golden Knights",
-    "GameDate": "2024-12-04",
-    "AB": 2,
-    "H": 1,
-    "Doubles": 0,
-    "Triples": 0,
-    "HR": 0,
-    "R": 1
-  }
-]
+[{
+  "TeamName": "Golden Knights",
+  "PlayerName": "Jasper",
+  "GameDate": "2025-02-20T00:00:00",
+  "AB": 0,
+  "H": 0,
+  "Doubles": 0,
+  "Triples": 0,
+  "HR": 0,
+  "R": 0,
+  "RBI": 0,
+  "BB": 0,
+  "SO": 0,
+  "SB": 0,
+  "CS": 0
+}]

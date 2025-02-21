@@ -34,6 +34,7 @@
         @if (showBatter)
         {
             <form id="addBatterGameForm" method="post" action="/Add/AddGame">
+                <input type="hidden" name="gameType" value="Batter" />
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="batterTeamName" class="form-label">Team Name</label>
@@ -76,6 +77,26 @@
                         <label for="batterR" class="form-label">R</label>
                         <input type="number" class="form-control" id="batterR" name="R" value="0">
                     </div>
+                    <div class="col-md-3">
+                        <label for="batterRBI" class="form-label">RBI</label>
+                        <input type="number" class="form-control" id="batterRBI" name="RBI" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterBB" class="form-label">BB</label>
+                        <input type="number" class="form-control" id="batterBB" name="BB" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterSO" class="form-label">SO</label>
+                        <input type="number" class="form-control" id="batterSO" name="SO" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterSB" class="form-label">SB</label>
+                        <input type="number" class="form-control" id="batterSB" name="SB" value="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="batterSO" class="form-label">CS</label>
+                        <input type="number" class="form-control" id="batterCS" name="CS" value="0">
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Add Batter Game</button>
             </form>
@@ -89,40 +110,45 @@
                 <div class="card mb-4">
                     <div class="card-header">Add New Pitcher Game</div>
                     <div class="card-body">
-                        <form id="addPitcherGameForm">
+                        <form id="addPitcherGameForm" method="post" action="/Add/AddGame">
+                            <input type="hidden" name="gameType" value="Pitcher" />
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="pitcherTeamName" class="form-label">Team Name</label>
-                                    <input type="text" class="form-control" id="pitcherTeamName" placeholder="Enter team name" required>
+                                    <input type="text" class="form-control" id="pitcherTeamName" name="TeamName" placeholder="Enter team name" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="pitcherPlayerName" class="form-label">Player Name</label>
-                                    <input type="text" class="form-control" id="pitcherPlayerName" placeholder="Enter player name" required>
+                                    <input type="text" class="form-control" id="pitcherPlayerName" name="PlayerName" placeholder="Enter player name" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="pitcherGameDate" class="form-label">Game Date</label>
-                                    <input type="date" class="form-control" id="pitcherGameDate" required>
+                                    <input type="date" class="form-control" id="pitcherGameDate" name="GameDate" required>
                                 </div>
                             </div>
                             <h5>Pitching Stats</h5>
                             <div class="row mb-3">
                                 <div class="col-md-3">
                                     <label for="pitcherW" class="form-label">W</label>
-                                    <input type="number" class="form-control" id="pitcherW" value="0">
+                                    <input type="number" class="form-control" id="pitcherW" name="W" value="0">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="pitcherL" class="form-label">L</label>
-                                    <input type="number" class="form-control" id="pitcherL" value="0">
+                                    <input type="number" class="form-control" id="pitcherL" name="L" value="0">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="pitcherSO" class="form-label">SO</label>
-                                    <input type="number" class="form-control" id="pitcherSO" value="0">
+                                    <input type="number" class="form-control" id="pitcherSO" name="SO" value="0">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="pitcherIP" class="form-label">IP</label>
-                                    <input type="number" step="0.1" class="form-control" id="pitcherIP" value="0">
+                                    <input type="number" step="0.1" class="form-control" id="pitcherIP" name="IP" value="0">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pitcherRuns" class="form-label">Runs</label>
+                                    <input type="number" step="0.1" class="form-control" id="pitcherRuns" name="Runs" value="0">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Add Pitcher Game</button>
@@ -130,11 +156,24 @@
                     </div>
                 </div>
             </div>
+
         }
     </div>
-
+    <div class="d-flex justify-content-center mt-4">
+        <a href="/" class="btn btn-secondary">Go Back to Home</a>
+    </div>
     <!-- External Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to clear the form fields after successful submission
+        function clearForm() {
+            document.getElementById("addBatterGameForm").reset(); // Replace "addGameForm" with your form's actual id
+        }
+        function clearForm() {
+            document.getElementById("addPitcherGameForm").reset(); // Replace "addGameForm" with your form's actual id
+        }
+    </script>
+
 </body>
 
 </html>

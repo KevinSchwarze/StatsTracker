@@ -1,0 +1,23 @@
+[{
+  "W": "0",
+  "L": "0",
+  "IP": "0",
+  "HA": "0",
+  "Runs": "0",
+  "SO": "0",
+  "TeamName": "Golden Knights",
+  "PlayerName": "Jasper",
+  "GameDate": "2025-02-03",
+  "ERA": "0"
+},{
+  "W": "0",
+  "L": "0",
+  "IP": "0",
+  "HA": "0",
+  "Runs": "0",
+  "SO": "0",
+  "TeamName": "Golden Knights",
+  "PlayerName": "Jasper",
+  "GameDate": "2025-01-29",
+  "ERA": "0"
+}]

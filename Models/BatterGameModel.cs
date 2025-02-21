@@ -9,5 +9,10 @@
     public int Triples { get; set; }
     public int HR { get; set; }
     public int R { get; set; }
+    public int RBI { get; set; }
+    public int BB { get; set; }
+    public int SO { get; set; }
+    public int SB { get; set; }
+    public int CS { get; set; }
 }
 

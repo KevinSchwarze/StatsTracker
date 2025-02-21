@@ -1,0 +1,103 @@
+﻿@model List<PlayerStats>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Stats</title>
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+    <table id="statsTable" class="display">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>Player Name</th>
+                <th>Game Date</th>
+                <th>AB</th>
+                <th>H</th>
+                <th>Doubles</th>
+                <th>Triples</th>
+                <th>HR</th>
+                <th>R</th>
+                <th>RBI</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>SB</th>
+                <th>CS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stat in Model)
+            {
+                <tr>
+                    <td>@stat.TeamName</td>
+                    <td>@stat.PlayerName</td>
+                    <td>@stat.GameDate.ToString("yyyy-MM-dd")</td>
+                    <td>@stat.AB</td>
+                    <td>@stat.H</td>
+                    <td>@stat.Doubles</td>
+                    <td>@stat.Triples</td>
+                    <td>@stat.HR</td>
+                    <td>@stat.R</td>
+                    <td>@stat.RBI</td>
+                    <td>@stat.BB</td>
+                    <td>@stat.SO</td>
+                    <td>@stat.SB</td>
+                    <td>@stat.CS</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3" style="text-align:right">Totals:</th>
+                <th id="totalAB"></th>
+                <th id="totalH"></th>
+                <th id="totalDoubles"></th>
+                <th id="totalTriples"></th>
+                <th id="totalHR"></th>
+                <th id="totalR"></th>
+                <th id="totalRBI"></th>
+                <th id="totalBB"></th>
+                <th id="totalSO"></th>
+                <th id="totalSB"></th>
+                <th id="totalCS"></th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#statsTable').DataTable({
+                "footerCallback": function (row, data, start, end, display) {
+                    var api = this.api();
+
+                    // Helper function to sum up column data
+                    var sumColumn = function (index) {
+                        return api.column(index, { search: "applied" }).data()
+                            .reduce((a, b) => (parseInt(a) || 0) + (parseInt(b) || 0), 0);
+                    };
+
+                    // Update footer cells with column totals
+                    $('#totalAB').html(sumColumn(3));
+                    $('#totalH').html(sumColumn(4));
+                    $('#totalDoubles').html(sumColumn(5));
+                    $('#totalTriples').html(sumColumn(6));
+                    $('#totalHR').html(sumColumn(7));
+                    $('#totalR').html(sumColumn(8));
+                    $('#totalRBI').html(sumColumn(9));
+                    $('#totalBB').html(sumColumn(10));
+                    $('#totalSO').html(sumColumn(11));
+                    $('#totalSB').html(sumColumn(12));
+                    $('#totalCS').html(sumColumn(13));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Review Player Stats";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+        <form id="getPlayerDataForm" method="post" action="/Review/GetPlayerData">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="username" class="form-label">Username (Leave empty for all users)</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="col-md-6">
+                    <label for="dataType" class="form-label">Select Data Type</label>
+                    <select class="form-select" id="dataType" name="dataType" required>
+                        <option value="batterstats.json">Batter Stats</option>
+                        <option value="pitcherstats.json">Pitcher Stats</option>
+                    </select>
+                </div>
+            </div>
+
+            <h5>Additional Options</h5>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="filterOption" class="form-label">Filter Option (Optional)</label>
+                    <input type="text" class="form-control" id="filterOption" name="filterOption" placeholder="Enter filter criteria">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Get Player Data</button>
+        </form>
+
+    </div>
+
+   @* <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>*@
+</body>
+</html>
